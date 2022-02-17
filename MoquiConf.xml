@@ -3,7 +3,12 @@
 <moqui-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/moqui-conf-2.1.xsd">
     <screen-facade>
         <screen location="component://webroot/screen/webroot/apps.xml">
-            <subscreens-item name="ros" menu-title="ROS" menu-index="14" location="component://ros-moqui/screen/RosApp.xml"/>
+            <subscreens-item name="ros" menu-title="ROS" menu-index="14" location="component://moqui-ros/screen/RosApp.xml"/>
         </screen>
     </screen-facade>
+
+<!-- TODO: Get a ROS2 (maybe ROS) Connection using Websocket or other protocol -->
+<!--    <webapp-list>-->
+<!--        <endpoint path="/rosws" class="com.acetousk.impl.webapp.RosBridgeEndpoint" timeout="900000" enabled="true"/>-->
+<!--    </webapp-list>-->
 </moqui-conf>

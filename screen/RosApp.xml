@@ -17,10 +17,21 @@ along with this software (see the LICENSE.md file). If not, see
         require-authentication="false" menu-image="fa fa-hashtag" menu-image-type="icon">
 
     <widgets>
-<!--        <subscreens-panel id="ros-app" type="popup"/>-->
-        <label text="first commit"/>
-        <render-mode>
-            <text type="html" location="component://ros-moqui/template/test.html"/>
-        </render-mode>
+        <label text="Warning: This is a work in Progress and therefore has an Unlimited loop" type="h1"/>
+
+        <text type="html,vuet,qvt"><![CDATA[
+            <script>
+                window.rosBridgeWebSocket = new moqui.BasicWebSocketClient(
+                        (location.protocol === 'https:' ? 'wss' : 'ws') + "://${ec.web.getHostName(true)}${ec.web.servletContext.contextPath}/rosbridge",
+                        function(data) {
+                            console.info("Received ROS Bridge Websocket Data: " + data);
+                        }
+                );
+
+                // TODO: I don't know how to send data, but there's gotta be a way
+                console.log(window.rosBridgeWebSocket)
+
+            </script>
+        ]]></text>
     </widgets>
 </screen>
