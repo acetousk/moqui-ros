@@ -14,10 +14,13 @@ along with this software (see the LICENSE.md file). If not, see
 -->
 <screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
-        include-child-content="false" require-authentication="false" menu-image="fa fa-hashtag" menu-image-type="icon">
+        require-authentication="false" menu-image="fa fa-hashtag" menu-image-type="icon">
 
     <widgets>
 <!--        <subscreens-panel id="ros-app" type="popup"/>-->
         <label text="first commit"/>
+        <render-mode>
+            <text type="html" location="component://ros-moqui/template/test.html"/>
+        </render-mode>
     </widgets>
 </screen>
